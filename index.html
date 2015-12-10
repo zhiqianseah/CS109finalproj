@@ -42,8 +42,6 @@
 
 <p>In this project, we explore the relationship between film locations and the reception of the films. The objective is to find out how much influence film locations have on user ratings of films and attempt to predict if a film will be well-received. In our analysis, we also account for the effect of genres on film reception.</p>
 
-<p><img src="https://prosimianmedia.files.wordpress.com/2014/11/interstellar-23.jpg" alt="Interstellar"></p>
-
 <h1>
 <a id="data" class="anchor" href="#data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data</h1>
 
@@ -110,14 +108,7 @@
 <h1>
 <a id="film-reception" class="anchor" href="#film-reception" aria-hidden="true"><span class="octicon octicon-link"></span></a>Film Reception</h1>
 
-<blockquote>
-<h2>
-<a id="everything-is-proceeding-as-i-have-foreseen" class="anchor" href="#everything-is-proceeding-as-i-have-foreseen" aria-hidden="true"><span class="octicon octicon-link"></span></a>"Everything is proceeding as I have foreseen."</h2>
-
-<p>The Emperor, <em>Star Wars: Episode VI - Return of the Jedi</em> (1983)</p>
-</blockquote>
-
-<p>To avoid the absurdity of predicted ratings seen previously, we, instead, predict whether a film will be well-received based on its locations and genres. We begin by classifying films with a user rating of at least 5 as being well-received.</p>
+<p>To avoid the absurdity of predicted ratings seen previously, we predict whether a film will be well-received based on its locations and genres instead. We begin by classifying films with a user rating of at least 5 as being well-received.</p>
 
 <p><img src="https://github.com/zhiqianseah/CS109finalproj/blob/master/cs109%20project%20images/10%20bar%20chart%20of%20reception.png?raw=true" alt="reception"></p>
 
@@ -132,42 +123,34 @@
 
 <p>We note that with 7,716 well-received films, naively classifying all films as being well-received immediately yields an accuracy of 77.16%. Any model that we choose must have an accuracy score above this baseline.</p>
 
-<p>After which, we use Principal Component Analysis (PCA) to reduce the dimension of our data set. Then, logistic regression and k-Nearest Neighbours(kNN) will be used for classification and the accuracy of both estimators will be compared to a baseline. Visualisation of results will be done via graphical plots and Tableau.</p>
+<h1>
+<a id="classification" class="anchor" href="#classification" aria-hidden="true"><span class="octicon octicon-link"></span></a>Classification</h1>
 
 <p><img src="https://www.komar.de/fileadmin/media/Fototapeten_Bilder/8-484_Star_Wars_Lost_Droids_ma.jpg" alt="star wars tatooine"></p>
 
-<h3>
-<a id="4-classification" class="anchor" href="#4-classification" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. Classification</h3>
-
-<p>We reduced the dimension of the data using PCA and obtained 1500 components that account for 95% variability in the features. Logistic regression and kNN classifiers were trained and our results show that the accuracy of these classfiers outperform the baseline slightly.</p>
-
-<p><img src="https://jaredandkyal.files.wordpress.com/2014/05/godzilla-2014-movie-screenshot-old-monster.jpg" alt="godzilla"></p>
-
 <blockquote>
 <h2>
-<a id="i-need-to-establish-baseline-data-1" class="anchor" href="#i-need-to-establish-baseline-data-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>"I need to establish baseline data.."</h2>
+<a id="everything-is-proceeding-as-i-have-foreseen" class="anchor" href="#everything-is-proceeding-as-i-have-foreseen" aria-hidden="true"><span class="octicon octicon-link"></span></a>"Everything is proceeding as I have foreseen."</h2>
 
-<p><em>Godzilla (2014)</em></p>
+<p>The Emperor, <em>Star Wars: Episode VI - Return of the Jedi</em> (1983)</p>
 </blockquote>
 
+<p>Due to the large number of locations and genres, we use Principal Components Analysis to reduce the dimensions of our data to 1,500 principal components. Using these principal components as our features, we performed classification using k-Nearest Neighbors(kNN) and Logistic Regression.</p>
+
 <p><img src="https://github.com/zhiqianseah/CS109finalproj/blob/master/cs109%20project%20images/09%20classifier%20accuracy.png?raw=true" alt="classifier accuracy"></p>
+
+<p>Though the improvement in accuracy over the baseline is only about 1.68%, Logistic Regression outperforms kNN, yielding an accuracy of 78.84%. In absolute terms, Logistic Regression has performed quite well. The remaining misclassification could be attributed to lack of strong correlation between reception and locations and genres.</p>
+
+<p>Nevertheless, our model seems to have predicted film reception based on locations and genres with moderate degree of accuracy. Future studies may consider incorporating </p>
 
 <blockquote>
 <h2>
 <a id="this-data-makes-no-sense" class="anchor" href="#this-data-makes-no-sense" aria-hidden="true"><span class="octicon octicon-link"></span></a>"This data makes no sense."</h2>
 
 <p><em>Interstellar (2014)</em></p>
-
-<h2>
-<a id="and-edmunds-data-is-better" class="anchor" href="#and-edmunds-data-is-better" aria-hidden="true"><span class="octicon octicon-link"></span></a>"And Edmund's data is better"</h2>
-
-<p><em>Interstellar (2014)</em></p>
-
-<h2>
-<a id="the-data-just-doesnt-justify-this-test" class="anchor" href="#the-data-just-doesnt-justify-this-test" aria-hidden="true"><span class="octicon octicon-link"></span></a>"The data just doesn't justify this test."</h2>
-
-<p><em>Spider-Man (2002)</em></p>
 </blockquote>
+
+<p><img src="https://prosimianmedia.files.wordpress.com/2014/11/interstellar-23.jpg" alt="Interstellar"></p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/zhiqianseah/CS109finalproj">Data Analysis on Movie Filming Locations</a> is maintained by <a href="https://github.com/zhiqianseah">zhiqianseah</a>.</span>
