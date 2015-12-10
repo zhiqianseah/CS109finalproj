@@ -94,7 +94,7 @@
 
 <p><img src="https://expresselevatortohell.files.wordpress.com/2013/01/saving-private-ryan-tom-hanks.jpg" alt="Saving Private Ryan"></p>
 
-<p>Using the coefficient estimates, we make some predictions on our test data, giving us the results.</p>
+<p>Using the coefficient estimates, we make some predictions on our test data, giving us the following results.</p>
 
 <p><img src="https://github.com/zhiqianseah/CS109finalproj/blob/master/cs109%20project%20images/08%20histogram%20predicted%20vs%20actual%20ratings.png?raw=true" alt="actual vs predicted ratings"></p>
 
@@ -107,19 +107,34 @@
 <p>Frank Costello, <em>The Departed (2006)</em></p>
 </blockquote>
 
-<p>So FAR
-We classified films with ratings &gt; 5 as '1' and the rest as '0'.</p>
-
-<p>We will apply linear regression on the data to study the effects of each location and genre on user ratings. After which, we use Principal Component Analysis (PCA) to reduce the dimension of our data set. Then, logistic regression and k-Nearest Neighbours(kNN) will be used for classification and the accuracy of both estimators will be compared to a baseline. Visualisation of results will be done via graphical plots and Tableau.</p>
-
-<p><img src="https://www.komar.de/fileadmin/media/Fototapeten_Bilder/8-484_Star_Wars_Lost_Droids_ma.jpg" alt="star wars tatooine"></p>
+<h1>
+<a id="film-reception" class="anchor" href="#film-reception" aria-hidden="true"><span class="octicon octicon-link"></span></a>Film Reception</h1>
 
 <blockquote>
 <h2>
 <a id="everything-is-proceeding-as-i-have-foreseen" class="anchor" href="#everything-is-proceeding-as-i-have-foreseen" aria-hidden="true"><span class="octicon octicon-link"></span></a>"Everything is proceeding as I have foreseen."</h2>
 
-<p><em>Star Wars: Episode VI - Return of the Jedi (1983)</em></p>
+<p>The Emperor, <em>Star Wars: Episode VI - Return of the Jedi</em> (1983)</p>
 </blockquote>
+
+<p>To avoid the absurdity of predicted ratings seen previously, we, instead, predict whether a film will be well-received based on its locations and genres. We begin by classifying films with a user rating of at least 5 as being well-received.</p>
+
+<p><img src="https://github.com/zhiqianseah/CS109finalproj/blob/master/cs109%20project%20images/10%20bar%20chart%20of%20reception.png?raw=true" alt="reception"></p>
+
+<p>So, we have 7,716 well-received films out of 10,000.</p>
+
+<blockquote>
+<h2>
+<a id="i-need-to-establish-baseline-data" class="anchor" href="#i-need-to-establish-baseline-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>"I need to establish baseline data.."</h2>
+
+<p><em>Godzilla</em> (2014)</p>
+</blockquote>
+
+<p>We note that with 7,716 well-received films, naively classifying all films as being well-received immediately yields an accuracy of 77.16%. Any model that we choose must have an accuracy score above this baseline.</p>
+
+<p>After which, we use Principal Component Analysis (PCA) to reduce the dimension of our data set. Then, logistic regression and k-Nearest Neighbours(kNN) will be used for classification and the accuracy of both estimators will be compared to a baseline. Visualisation of results will be done via graphical plots and Tableau.</p>
+
+<p><img src="https://www.komar.de/fileadmin/media/Fototapeten_Bilder/8-484_Star_Wars_Lost_Droids_ma.jpg" alt="star wars tatooine"></p>
 
 <h3>
 <a id="4-classification" class="anchor" href="#4-classification" aria-hidden="true"><span class="octicon octicon-link"></span></a>4. Classification</h3>
@@ -130,7 +145,7 @@ We classified films with ratings &gt; 5 as '1' and the rest as '0'.</p>
 
 <blockquote>
 <h2>
-<a id="i-need-to-establish-baseline-data" class="anchor" href="#i-need-to-establish-baseline-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>"I need to establish baseline data.."</h2>
+<a id="i-need-to-establish-baseline-data-1" class="anchor" href="#i-need-to-establish-baseline-data-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>"I need to establish baseline data.."</h2>
 
 <p><em>Godzilla (2014)</em></p>
 </blockquote>
@@ -152,11 +167,6 @@ We classified films with ratings &gt; 5 as '1' and the rest as '0'.</p>
 <a id="the-data-just-doesnt-justify-this-test" class="anchor" href="#the-data-just-doesnt-justify-this-test" aria-hidden="true"><span class="octicon octicon-link"></span></a>"The data just doesn't justify this test."</h2>
 
 <p><em>Spider-Man (2002)</em></p>
-
-<h2>
-<a id="it-makes-me-sad-this-regression" class="anchor" href="#it-makes-me-sad-this-regression" aria-hidden="true"><span class="octicon octicon-link"></span></a>"...it makes me sad, this regression."</h2>
-
-<p><em>The Departed (2006)</em></p>
 </blockquote>
 
       <footer class="site-footer">
