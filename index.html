@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Film Ratings from Locations by zhiqianseah</title>
+    <title>Film Ratings &amp; Locations by zhiqianseah</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -11,7 +11,7 @@
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">Film Ratings from Locations</h1>
+      <h1 class="project-name">Film Ratings &amp; Locations</h1>
       <h2 class="project-tagline">CS109: Final Project</h2>
       <a href="https://github.com/zhiqianseah/CS109finalproj" class="btn">View on GitHub</a>
       <a href="https://github.com/zhiqianseah/CS109finalproj/zipball/master" class="btn">Download .zip</a>
@@ -56,19 +56,19 @@
 
 <p><img src="https://apercucinephilia.files.wordpress.com/2012/01/lr-sherlock2.jpg" alt="sherlock holmes"></p>
 
-<p>The filming locations of each film are user-contributed, resulting in many spelling mistakes and repeated entries. In order to obtain clean filming locations information, we extracted locations that corresponded to a list of cities and countries. In the process, we also discovered many interesting places. For example, there is a city in Texas called China and a county in Pennsylvania called King of Prussia. Eventually, we are left with a data set containing 4802 locations (of cities and countries) and 24 genres.</p>
+<p>The filming locations of each film are user-contributed, resulting in many spelling mistakes and repeated entries. In order to obtain clean filming locations information, we extracted locations that corresponded to a list of cities and countries. In the process, we also discovered many strange locations. For example, there is a city in Texas called China and a county in Pennsylvania called King of Prussia. Eventually, we are left with a data set containing 4802 locations (of cities and countries) and 24 genres.</p>
 
 <p><img src="https://github.com/zhiqianseah/CS109finalproj/blob/master/cs109%20project%20images/01%20histogram%20of%20user%20rating.png?raw=true" alt="histogram of user ratings"></p>
 
-<p>The distribution of user ratings look normal with mean of 5.7. It appears that none of the films have a user rating of 10. </p>
+<p>The distribution of user ratings look normal with mean of 5.7. It appears that none of the films have a user rating of 0 or 10. People just hate giving boundary ratings, don't they?</p>
 
 <p><img src="https://github.com/zhiqianseah/CS109finalproj/blob/master/cs109%20project%20images/02%20bar%20chart%20top%2015%20locations.png?raw=true" alt="bar chart of top 15 locations"></p>
 
-<p>Looking at the top 15 film locations, it is no surprise that majority of the films are filmed in USA and western Europe.</p>
+<p>Looking at the top 15 film locations, it is no surprise that majority of the films are filmed in USA and western Europe. Kudos to India for appearing on this list!</p>
 
 <p><img src="https://github.com/zhiqianseah/CS109finalproj/blob/master/cs109%20project%20images/04%20bar%20chart%20top%2015%20genre.png?raw=true" alt="bar chart of top 15 genres"></p>
 
-<p>As for genres, drama and comedy are the most common.</p>
+<p>As for genres, drama and comedy are the most common. In fact, half of our data set are dramas!</p>
 
 <h1>
 <a id="effects-of-locations--genres-on-ratings" class="anchor" href="#effects-of-locations--genres-on-ratings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Effects of Locations &amp; Genres on Ratings</h1>
@@ -80,15 +80,15 @@
 <p><em>The Double</em> (2014)</p>
 </blockquote>
 
-<p>To estimate the effects of each location and genre on user ratings, we perform a simple linear regression. We first look at the effects of the top 15 most popular film locations.</p>
+<p>To estimate the effects of each location and genre on user ratings, a simple linear regression was performed. We first look at the effects of the top 15 most popular film locations.</p>
 
 <p><img src="https://github.com/zhiqianseah/CS109finalproj/blob/master/cs109%20project%20images/06%20location%20coeff%20estimates.png?raw=true" alt="location coefficient estimates"></p>
 
-<p>From this plot, we see that filming in USA is estimated to raise user ratings by 3.3 points. It appears that filming in LA has no statistically significant effect on user ratings.</p>
+<p>From this plot, we see that filming in USA is estimated to raise user ratings by 3.3 points. It appears that filming in LA has no statistically significant effect on user ratings. Interestingly, filming in London, New York and Paris have the effect of reducing user ratings. This may be a result of having many films being filmed in these locations such that a large proportion of them have bad ratings. Or perhaps, most of those films have average ratings with a few really horrible ones.</p>
 
 <p><img src="https://github.com/zhiqianseah/CS109finalproj/blob/master/cs109%20project%20images/07%20genre%20coeff%20estimates.png?raw=true" alt="genre coefficient estimates"></p>
 
-<p>Here, we note that having a genre belonging to top 15 most common ones has a positive effect on user ratings, with drama having the most impact of 2.2 points. The only statistically insignificant genre is war.</p>
+<p>For genres, we note that having a genre belonging to top 15 most common ones has a positive effect on user ratings, with drama having the most impact of 2.2 points. Romance actually raises user ratings? Good job, Twilight! The only statistically insignificant genre here seems to be war.</p>
 
 <blockquote>
 <h2>
@@ -99,11 +99,11 @@
 
 <p><img src="https://expresselevatortohell.files.wordpress.com/2013/01/saving-private-ryan-tom-hanks.jpg" alt="Saving Private Ryan"></p>
 
-<p>Using the coefficient estimates, we make some predictions on our test data, giving us the following results.</p>
+<p>Using the coefficient estimates, we predict user ratings of our test data, giving us the following results.</p>
 
 <p><img src="https://github.com/zhiqianseah/CS109finalproj/blob/master/cs109%20project%20images/08%20histogram%20predicted%20vs%20actual%20ratings.png?raw=true" alt="actual vs predicted ratings"></p>
 
-<p>The similar general shape of the predicted and actual user ratings suggests that our model performed quite well. However, having predicted ratings outside the range of 0 and 10 renders this model somewhat absurd.</p>
+<p>Not bad. The similar general shape of the predicted and actual user ratings suggests that our model performed quite well. However, having predicted ratings outside the range of 0 and 10 renders this model somewhat absurd.</p>
 
 <blockquote>
 <h2>
@@ -115,7 +115,7 @@
 <h1>
 <a id="film-reception" class="anchor" href="#film-reception" aria-hidden="true"><span class="octicon octicon-link"></span></a>Film Reception</h1>
 
-<p>To avoid the absurdity of predicted ratings seen previously, we predict whether a film will be well-received based on its locations and genres instead. We begin by classifying films with a user rating of at least 5 as being well-received.</p>
+<p>To avoid that absurdity of predicted ratings, we predict whether a film will be well-received based on its locations and genres instead. We begin by classifying films with a user rating of at least 5 as being well-received.</p>
 
 <p><img src="https://github.com/zhiqianseah/CS109finalproj/blob/master/cs109%20project%20images/10%20bar%20chart%20of%20reception.png?raw=true" alt="reception"></p>
 
@@ -160,7 +160,7 @@
 <p><img src="https://prosimianmedia.files.wordpress.com/2014/11/interstellar-23.jpg" alt="Interstellar"></p>
 
       <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/zhiqianseah/CS109finalproj">Film Ratings from Locations</a> is maintained by <a href="https://github.com/zhiqianseah">zhiqianseah</a>.</span>
+        <span class="site-footer-owner"><a href="https://github.com/zhiqianseah/CS109finalproj">Film Ratings &amp; Locations</a> is maintained by <a href="https://github.com/zhiqianseah">zhiqianseah</a>.</span>
 
         <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
