@@ -19,17 +19,20 @@
     </section>
 
     <section class="main-content">
-      <p><em>The Lord of the Rings</em>, <em>Harry Potter</em> and <em>Star Wars</em>. What do these films have in common?</p>
+      <h2>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Introduction</h2>
+
+<p><em>The Lord of the Rings</em>, <em>Harry Potter</em> and <em>Star Wars</em>. What do these films have in common?</p>
 
 <p><img src="http://img03.deviantart.net/4431/i/2012/044/f/6/three_wise_men_color_by_csoro-d4pmlv2.jpg" alt="Three Old Men"></p>
 
-<p>Well, besides a powerful old man mentoring a young boy.</p>
+<p>Well, besides having a powerful old man mentoring a young boy.</p>
 
 <p><img src="http://www.themarysue.com/wp-content/uploads/2014/09/the-return-of-the-king.jpg" alt="minas tirith"></p>
 
 <p>That's right, spectacular film locations!</p>
 
-<p>This project stemmed from a belief that great film locations make great films...GREAT! We hypothesize that awesome films are defined by their locations. Remember the deserted island from <em>Skyfall</em>? Or even the iconic London skyline that we associate with the <em>Bond</em> films.</p>
+<p>This project stemmed from the belief that great film locations make great films...GREAT! We hypothesize that awesome films are defined by their locations. Remember the deserted island from <em>Skyfall</em>? Or the iconic London skyline that we associate with the <em>Bond</em> films?</p>
 
 <p><img src="http://www.startuproar.co.uk/wp-content/uploads/2014/08/london.jpg" alt="London Skyline"></p>
 
@@ -37,37 +40,49 @@
 
 <p><img src="https://s3.amazonaws.com/rezgo/7225/46198/74386.jpg" alt="Cliffs of Moher"></p>
 
-<h3>
-<a id="1-overview" class="anchor" href="#1-overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>1. Overview</h3>
+<p>In this project, we explore the relationship between film locations and the reception of the films. The objective is to find out how much influence film locations have on user ratings of films and attempt to predict if a film will be well received. In our analysis, we also account for the effect of genres on film reception.</p>
 
-<p>In this project, we will do an exploratory analysis of the relationship between film locations and the reception of the films. The aim is to find out how much influence film locations have on the the success of films and how to we can use the locations to predict whether a film will be well received. In addition, we will also consider the effect that genres have on films. We will scrape film data from IMDB. </p>
+<p><img src="https://prosimianmedia.files.wordpress.com/2014/11/interstellar-23.jpg" alt="Interstellar"></p>
+
+<h2>
+<a id="data" class="anchor" href="#data" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data</h2>
+
+<blockquote>
+<h1>
+<a id="data-data-data-i-can-not-make-bricks-without-clay" class="anchor" href="#data-data-data-i-can-not-make-bricks-without-clay" aria-hidden="true"><span class="octicon octicon-link"></span></a>"Data, data, data. I can not make bricks without clay."</h1>
+
+<p>Sherlock, <em>Sherlock Holmes</em> (2009) </p>
+</blockquote>
+
+<p>We obtain our data by scraping films between 2009 and 2014 from IMDB. Out of the 18,000 films that we obtained, those without locations, genres or user ratings were dropped. Then, 10,000 films were randomly sampled to form our data set.</p>
+
+<p><img src="https://apercucinephilia.files.wordpress.com/2012/01/lr-sherlock2.jpg" alt="sherlock holmes"></p>
+
+<p>The filming locations of each film are user-contributed, resulting in many spelling mistakes and repeated entries. In order to obtain clean filming locations information, we extracted locations that corresponded to a list of cities and countries. In the process, we also discovered many interesting places. For example, there is a city in Texas called China and a county in Pennsylvania called King of Prussia. Eventually, we are left with a data set containing 4802 locations (of cities and countries) and 24 genres.</p>
+
+<p><img src="https://github.com/zhiqianseah/CS109finalproj/blob/master/cs109%20project%20images/01%20histogram%20of%20user%20rating.png" alt="histogram of user ratings"></p>
+
+<p>The distribution of user ratings look normal with mean around 5.7. It appears that none of the films have a user rating of 10. </p>
+
+<p><img src="https://github.com/zhiqianseah/CS109finalproj/blob/master/cs109%20project%20images/02%20bar%20chart%20top%2015%20locations.png?raw=true" alt="bar chart of top 15 locations"></p>
+
+<p>Looking at the top 15 film locations, it is no surprised that majority of the films are filmed in USA and western Europe.</p>
+
+<p><img src="https://github.com/zhiqianseah/CS109finalproj/blob/master/cs109%20project%20images/04%20bar%20chart%20top%2015%20genre.png" alt="bar chart of top 15 genres"></p>
+
+<p>As for genres, drama and comedy are the most common.</p>
 
 <p>We will apply linear regression on the data to study the effects of each location and genre on user ratings. After which, we use Principal Component Analysis (PCA) to reduce the dimension of our data set. Then, logistic regression and k-Nearest Neighbours(kNN) will be used for classification and the accuracy of both estimators will be compared to a baseline. Visualisation of results will be done via graphical plots and Tableau.</p>
-
-<p><img src="https://prosimianmedia.files.wordpress.com/2014/11/interstellar-23.jpg"></p>
 
 <h3>
 <a id="2-data-acquisition--management" class="anchor" href="#2-data-acquisition--management" aria-hidden="true"><span class="octicon octicon-link"></span></a>2. Data Acquisition &amp; Management</h3>
 
 <p>The data from IMDB which gives us information about each film such as the country, critic ratings, genre, film location, release dates, user ratings and year. The data consists of film titles from 2009 to 2014. Titles without user ratings, film locations and genres are removed from our data set. Subsequently, we pick 10,000 titles randomly from the remaining pool of titles. We classified films with ratings &gt; 5 as '1' and the rest as '0'.</p>
 
-<blockquote>
-<h2>
-<a id="data-data-data-i-can-not-make-bricks-without-clay" class="anchor" href="#data-data-data-i-can-not-make-bricks-without-clay" aria-hidden="true"><span class="octicon octicon-link"></span></a>"Data, data, data. I can not make bricks without clay."</h2>
-
-<p><em>Sherlock, Sherlock Holmes (2009)</em> </p>
-</blockquote>
-
 <p>Substantial data cleaning was done to eliminate problems like spelling mistakes or multiple entries of similar details. We restrict the locations to cities and countries by comparing the data with a list of cities and countries. While this resulted in some problems that we eventually resolved, one particularly interesting issue was that many countries had names shared by cities. For example, China turned out to be the name of a city in Texas as well.</p>
-
-<p><img src="https://apercucinephilia.files.wordpress.com/2012/01/lr-sherlock2.jpg" alt="sherlock holmes"></p>
 
 <h3>
 <a id="3-data-analysis" class="anchor" href="#3-data-analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>3. Data Analysis</h3>
-
-<p>Using the cleaned data, we took a preliminary look at the top 15 locations where films were shot at. It can be seen a majority of the films were set in the USA and parts of Europe.</p>
-
-<p><img src="https://github.com/zhiqianseah/CS109finalproj/blob/master/cs109%20project%20images/02%20bar%20chart%20top%2015%20locations.png?raw=true" alt="bar chart of top 15 locations"></p>
 
 <p>By doing linear regression of the ratings on the locations and genres, we are able find out how much impact the top 15 locations and genres have on the ratings. </p>
 
