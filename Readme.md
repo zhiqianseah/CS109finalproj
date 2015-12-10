@@ -18,8 +18,8 @@ The Data Scraping notebook can be found at "Data scraping.ipynb"
 
 Post-processing data is saved in
 
-* df_boolean_temp2.csv
-* df_boolean_temp4.csv
+* df_boolean_temp2.csv    (mainly for data analysis)
+* df_boolean_temp4.csv    (mainly for visualization)
 
 To make our Tableau visualization, we match the cities found in our data with several public databases for country/cities information and coordinates. These public databases can be found at:
 
